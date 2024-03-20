@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtText1"
+        android:id="@+id/edHT"
         android:layout_width="254dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/edtText2"
+        android:id="@+id/edNS"
         android:layout_width="254dp"
         android:layout_height="50dp"
         android:layout_marginTop="12dp"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.619"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/edtText1" />
+        app:layout_constraintTop_toBottomOf="@+id/edHT" />
 
     <Button
         android:id="@+id/btnNhap"
