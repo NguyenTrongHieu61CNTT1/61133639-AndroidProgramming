@@ -9,6 +9,11 @@ import android.widget.ProgressBar;
 
 import com.google.android.material.button.MaterialButton;
 
+import org.json.JSONObject;
+
+import okhttp3.Request;
+import okhttp3.RequestBody;
+
 public class MainActivity extends AppCompatActivity {
 
     //Khai báo các biến
@@ -16,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     MaterialButton btnTaoHinhAnh;
     ProgressBar thanhTienDo;
     ImageView img;
+
+    public static final MediaType JSON = MediaType.get("application/json");
+
+    OkHttpClient client = new OkHttpClient();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,24 @@ public class MainActivity extends AppCompatActivity {
                 txtNhap.setError("Bạn chưa nhập nội dung nè!");
                 return;
             }
+            callAPI(text);
         });
+    }
+
+    void callAPI(String text){
+        //Hàm gọi web API
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("prompt", text);
+            jsonBody.put("size","256x256");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        RequestBody requestBody = RequestBody.create(jsonBody.toString(), JSON);
+        Request request = new Request.Builder()
+                .url("https://api.openai.com/v1/images/generations")
+                .header("Authorization", "Beerer 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")
+                .post(requestBody)
+                .build();
     }
 }
