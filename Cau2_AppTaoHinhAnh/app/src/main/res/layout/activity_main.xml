@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tạo hình ảnh bằng AI"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt1"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập vào ý tưởng của bạn..."
+        android:padding="15dp"
+        android:layout_marginVertical="20dp"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Tạo hình ảnh"
+            android:padding="15dp"
+            android:id="@+id/btnTao"/>
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/progress_circular"
+            android:indeterminateTint="@color/design_default_color_primary"/>
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:id="@+id/img"
+            android:layout_marginTop="20dp"
+            android:src="#FFD1D1"/>
+    </LinearLayout>
+
+</RelativeLayout>
