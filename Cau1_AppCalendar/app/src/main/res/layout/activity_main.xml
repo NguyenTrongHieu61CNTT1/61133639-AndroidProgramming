@@ -7,9 +7,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <CalendarView
-        android:id="@+id/cal"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <CalendarView
+            android:id="@+id/cal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 
 </RelativeLayout>
