@@ -3,12 +3,38 @@ package ntu.MSSV_61133639.cau2_apptaohinhanh;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+
+import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    //Khai báo các biến
+    EditText txtNhap;
+    MaterialButton btnTaoHinhAnh;
+    ProgressBar thanhTienDo;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Lấy id từng điều khiển
+        txtNhap = findViewById(R.id.txtNhap);
+        btnTaoHinhAnh = findViewById(R.id.btnTao);
+        thanhTienDo = findViewById(R.id.progress_bar);
+        img = findViewById(R.id.img);
+
+        //Tạo các bộ listener
+        btnTaoHinhAnh.setOnClickListener((v)-> {
+            String text = txtNhap.getText().toString().trim(); //Lấy text được nhập vào, trim(): Xóa khoảng trắng ở đầu và cuối chuỗi
+            if (text.isEmpty()) {
+                txtNhap.setError("Bạn chưa nhập nội dung nè!");
+                return;
+            }
+        });
     }
 }

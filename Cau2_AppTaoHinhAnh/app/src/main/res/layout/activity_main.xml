@@ -21,12 +21,14 @@
         android:layout_centerVertical="true"
         android:gravity="center"
         android:orientation="vertical">
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập vào ý tưởng của bạn..."
-        android:padding="15dp"
-        android:layout_marginVertical="20dp"/>
+
+        <EditText
+            android:id="@+id/txtNhap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:hint="Nhập vào ý tưởng của bạn..."
+            android:padding="15dp" />
         <com.google.android.material.button.MaterialButton
             android:layout_width="wrap_content"
             android:layout_height="60dp"
@@ -37,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
-            android:id="@+id/progress_circular"
+            android:id="@+id/progress_bar"
             android:indeterminateTint="@color/design_default_color_primary"/>
         <ImageView
             android:layout_width="300dp"
