@@ -11,6 +11,8 @@ import com.google.android.material.button.MaterialButton;
 
 import org.json.JSONObject;
 
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar thanhTienDo;
     ImageView img;
 
-    public static final MediaType JSON = MediaType.get("application/json");
+    public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 
     OkHttpClient client = new OkHttpClient();
 
