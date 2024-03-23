@@ -104,21 +104,49 @@
                 android:fontFamily="sans-serif-condensed"
                 android:textColor="@color/gray"
                 android:textStyle="bold"/>
+
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:drawableStart=""
-                android:text="Sở thích: Đọc sách, chơi game, đam mê các loại nhạc cụ, ăn uống, đi đây đi đó,..."
-                android:textSize="20dp"
+                android:alpha="0.5"
                 android:fontFamily="sans-serif-condensed"
-                android:textColor="@color/gray"
-                android:textStyle="bold"/>
-            
+                android:gravity="center"
+                android:paddingTop="25dp"
+                android:text="THÔNG TIN LIÊN HỆ"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                tools:ignore="TextSizeCheck"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/facebook"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/tiktok"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/github"/>
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/instagram"/>
+            </LinearLayout>
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"/>
+                android:layout_height="20dp"/>
 
         </LinearLayout>
 
