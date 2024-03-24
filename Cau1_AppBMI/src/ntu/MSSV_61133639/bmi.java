@@ -11,9 +11,13 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Color;
+
+import javax.print.attribute.standard.OutputDeviceAssigned;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.Format;
 import java.awt.event.ActionEvent;
+import static java.lang.String.format;
 
 public class bmi extends JFrame {
 
@@ -100,7 +104,7 @@ public class bmi extends JFrame {
 				double kq = canNang/(chieuCao*chieuCao);
 				
 				//Hiển thị:
-				kQ.setText(String.valueOf(kq));
+				kQ.setText(String.valueOf(format("%.2f", kq)));
 				
 			}
 		});
