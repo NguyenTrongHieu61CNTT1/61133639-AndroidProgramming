@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Cau1_AppCalendar"
+rootProject.name = "Cau2_AppCalendar"
 include(":app")
  
