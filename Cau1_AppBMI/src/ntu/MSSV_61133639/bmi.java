@@ -16,28 +16,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class bmi extends JFrame {
-	
-	public double canNang = 0, chieuCao = 0, bmi = 0;
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField canNangValues;
 	private JTextField chieuCaoValues;
 	private JTextField kQ;
-
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					bmi frame = new bmi();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	
 	public bmi() {
@@ -70,7 +54,7 @@ public class bmi extends JFrame {
 		contentPane.add(canNangValues);
 		canNangValues.setColumns(10);
 		
-		chieuCaoValues = new JTextField();
+		JTextField chieuCaoValues = new JTextField();
 		chieuCaoValues.setColumns(10);
 		chieuCaoValues.setBounds(135, 152, 96, 46);
 		contentPane.add(chieuCaoValues);
@@ -85,12 +69,12 @@ public class bmi extends JFrame {
 		rdCm.setBounds(250, 164, 103, 21);
 		contentPane.add(rdCm);
 		
-		bmi = new JTextField();
-		bmi.setBackground(new Color(255, 255, 255));
-		bmi.setEditable(false);
-		bmi.setBounds(486, 100, 96, 98);
-		contentPane.add(bmi);
-		bmi.setColumns(10);
+		kQ = new JTextField();
+		kQ.setBackground(new Color(255, 255, 255));
+		kQ.setEditable(false);
+		kQ.setBounds(486, 100, 96, 98);
+		contentPane.add(kQ);
+		kQ.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("KẾT QUẢ:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -100,9 +84,24 @@ public class bmi extends JFrame {
 		JButton btnKT = new JButton("KIỂM TRA");
 		btnKT.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//Lấy dữ liẹu nhập về
-				canNang = Double.parseDouble(canNangValues.getText());
-				chieuCao = Double.parseDouble(chieuCaoValues.getText());
+				//Lấy dữ liệu:
+				String str_canNang = canNangValues.getText();
+				String str_chieuCao = chieuCaoValues.getText();
+				
+				//Chuyển kiểu:
+				Double canNang = Double.parseDouble(str_canNang);
+				Double chieuCao = Double.parseDouble(str_chieuCao);
+				
+				//Tính toán:
+				if (rdCm.isSelected()) {
+					chieuCao = chieuCao/100;
+				}
+				
+				double kq = canNang/(chieuCao*chieuCao);
+				
+				//Hiển thị:
+				kQ.setText(String.valueOf(kq));
+				
 			}
 		});
 		btnKT.setFont(new Font("Tahoma", Font.BOLD, 15));
