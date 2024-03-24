@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.text.Format;
 import java.awt.event.ActionEvent;
 import static java.lang.String.format;
+import java.awt.Toolkit;
 
 public class bmi extends JFrame {
 
@@ -29,6 +30,7 @@ public class bmi extends JFrame {
 
 	
 	public bmi() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Admin\\Downloads\\facebook.png"));
 		setTitle("Ứng dụng BMI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 770, 320);
