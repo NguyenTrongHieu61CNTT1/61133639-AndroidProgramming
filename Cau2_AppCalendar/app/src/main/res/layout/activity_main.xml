@@ -24,6 +24,7 @@
             android:textAlignment="center"
             android:fontFamily="sans-serif-black"
             android:textSize="30dp"
+            android:textColor="#696969"
             android:text="LỊCH VẠN NIÊN"/>
     </RelativeLayout>
 
