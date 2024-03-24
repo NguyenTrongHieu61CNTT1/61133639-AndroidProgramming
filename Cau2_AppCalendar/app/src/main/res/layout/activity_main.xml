@@ -68,7 +68,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1/05/2024: Ngày Quốc tế Lao động."
+                android:text="01/05/2024: Ngày Quốc tế Lao động."
                 android:layout_gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/white"
