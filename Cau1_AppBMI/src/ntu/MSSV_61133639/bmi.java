@@ -27,7 +27,7 @@ public class bmi extends JFrame {
 	public bmi() {
 		setTitle("Ứng dụng BMI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 640, 320);
+		setBounds(100, 100, 770, 320);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -72,7 +72,7 @@ public class bmi extends JFrame {
 		kQ = new JTextField();
 		kQ.setBackground(new Color(255, 255, 255));
 		kQ.setEditable(false);
-		kQ.setBounds(486, 100, 96, 98);
+		kQ.setBounds(486, 100, 168, 98);
 		contentPane.add(kQ);
 		kQ.setColumns(10);
 		
