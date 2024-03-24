@@ -12,8 +12,12 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Color;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class bmi extends JFrame {
+	
+	public double canNang = 0, chieuCao = 0, bmi = 0;
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -81,12 +85,12 @@ public class bmi extends JFrame {
 		rdCm.setBounds(250, 164, 103, 21);
 		contentPane.add(rdCm);
 		
-		kQ = new JTextField();
-		kQ.setBackground(new Color(255, 255, 255));
-		kQ.setEditable(false);
-		kQ.setBounds(486, 100, 96, 98);
-		contentPane.add(kQ);
-		kQ.setColumns(10);
+		bmi = new JTextField();
+		bmi.setBackground(new Color(255, 255, 255));
+		bmi.setEditable(false);
+		bmi.setBounds(486, 100, 96, 98);
+		contentPane.add(bmi);
+		bmi.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("KẾT QUẢ:");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -94,6 +98,13 @@ public class bmi extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnKT = new JButton("KIỂM TRA");
+		btnKT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Lấy dữ liẹu nhập về
+				canNang = Double.parseDouble(canNangValues.getText());
+				chieuCao = Double.parseDouble(chieuCaoValues.getText());
+			}
+		});
 		btnKT.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnKT.setBounds(48, 211, 183, 46);
 		contentPane.add(btnKT);
