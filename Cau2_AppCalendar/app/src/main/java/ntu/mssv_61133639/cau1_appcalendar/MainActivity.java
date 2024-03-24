@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         calendarView = findViewById(R.id.cal);
         calendar = Calendar.getInstance();
 
+        //Set ngày mặc định khi khởi chạy ứng dụng
+        setDay(1,1,2024);
+
         //Tạo Listener khi thay đổi ngày sẽ hiện thông báo ngày bạn đang chọn
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -30,5 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Bạn đang chọn ngày: " + day + "/" + month + "/" + year, Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    //Hàm set ngày tháng năm mặc định
+    public void setDay(int day, int month, int year){
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month - 1);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        long milli = calendar.getTimeInMillis();
+        calendarView.setDate(milli);
     }
 }
