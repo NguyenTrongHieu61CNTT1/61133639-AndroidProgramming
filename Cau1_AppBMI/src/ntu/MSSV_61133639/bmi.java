@@ -8,11 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import java.awt.Color;
 
 import javax.print.attribute.standard.OutputDeviceAssigned;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.Format;
@@ -33,7 +36,7 @@ public class bmi extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Admin\\Downloads\\facebook.png"));
 		setTitle("Ứng dụng BMI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 770, 320);
+		setBounds(100, 100, 804, 320);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -78,7 +81,7 @@ public class bmi extends JFrame {
 		kQ = new JTextField();
 		kQ.setBackground(new Color(255, 255, 255));
 		kQ.setEditable(false);
-		kQ.setBounds(486, 100, 168, 98);
+		kQ.setBounds(486, 100, 94, 98);
 		contentPane.add(kQ);
 		kQ.setColumns(10);
 		
@@ -113,5 +116,11 @@ public class bmi extends JFrame {
 		btnKT.setFont(new Font("Tahoma", Font.BOLD, 15));
 		btnKT.setBounds(48, 211, 183, 46);
 		contentPane.add(btnKT);
+		
+		JLabel lblNewLabel = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/doctor_icon.png")).getImage();
+		lblNewLabel.setIcon(new ImageIcon(img));
+		lblNewLabel.setBounds(608, 35, 172, 222);
+		contentPane.add(lblNewLabel);
 	}
 }
