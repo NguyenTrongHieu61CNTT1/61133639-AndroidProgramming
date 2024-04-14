@@ -1,6 +1,7 @@
 package ntu.mssv_61133639.usingrecylerview;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
 //        recyclerViewLandscape.setLayoutManager(layoutLinear);
 
         //Test theo chiều ngang:
-        RecyclerView.LayoutManager layoutLinearHorizontal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewLandscape.setLayoutManager(layoutLinearHorizontal);
+//        RecyclerView.LayoutManager layoutLinearHorizontal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+//        recyclerViewLandscape.setLayoutManager(layoutLinearHorizontal);
+
+        //Test giao diện dạng lưới:
+        RecyclerView.LayoutManager layoutGrid = new GridLayoutManager(this, 2);
+        recyclerViewLandscape.setLayoutManager(layoutGrid );
 
         //Tạo Adapter gắn với nguồn dữ liệu
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
