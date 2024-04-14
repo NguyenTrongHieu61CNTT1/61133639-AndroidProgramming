@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
         //Tìm điều khiển Recycler
         recyclerViewLandscape = findViewById(R.id.recyclerLand);
         //Tạo Layout manager để đặt bố cục cho Recycler
-        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
-        recyclerViewLandscape.setLayoutManager(layoutLinear);
+//        RecyclerView.LayoutManager layoutLinear = new LinearLayoutManager(this);
+//        recyclerViewLandscape.setLayoutManager(layoutLinear);
+
+        //Test theo chiều ngang:
+        RecyclerView.LayoutManager layoutLinearHorizontal = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewLandscape.setLayoutManager(layoutLinearHorizontal);
+
         //Tạo Adapter gắn với nguồn dữ liệu
         landScapeAdapter = new LandScapeAdapter(this, recyclerViewDatas);
         //Gắn Adapter với Recycler
