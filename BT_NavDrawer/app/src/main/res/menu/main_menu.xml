@@ -1,4 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="Trang chủ" />
+        <item
+            android:id="@+id/message"
+            android:icon="@drawable/chat"
+            android:title="Nhắn cho tôi" />
+        <item
+            android:id="@+id/photo"
+            android:icon="@drawable/photo"
+            android:title="Hình ảnh" />
+    </group>
+    <item
+        android:title="Trang cá nhân"
+        android:icon="@drawable/profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/about"
+                    android:title="Giới thiệu"/>
+                <item
+                    android:id="@+id/login"
+                    android:title="Đăng nhập"/>
+                <item
+                    android:id="@+id/signin"
+                    android:title="Đăng ký"/>
+            </group>
+        </menu>
+    </item>
+    <item
+        android:title="Chia sẻ"
+        android:icon="@drawable/share">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/fb"
+                    android:title="Facebook"/>
+                <item
+                    android:id="@+id/tiktok"
+                    android:title="Tiktok"/>
+                <item
+                    android:id="@+id/twitter"
+                    android:title="Twitter"/>
+            </group>
+        </menu>
+    </item>
 </menu>
