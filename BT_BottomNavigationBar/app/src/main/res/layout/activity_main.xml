@@ -19,6 +19,6 @@
         android:id="@+id/b_NavBar"
         android:layout_width="match_parent"
         app:menu="@menu/b_nav_menu"
-        android:layout_height="56dp"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

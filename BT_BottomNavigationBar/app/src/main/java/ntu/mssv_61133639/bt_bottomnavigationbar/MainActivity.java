@@ -40,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     allFragment(new Profile_Fragment(), false);
                 }
-
-                allFragment(new Home_Fragment(), true);
                 return true;
             }
         });
