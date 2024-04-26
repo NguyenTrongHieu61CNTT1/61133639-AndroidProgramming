@@ -1,25 +1,28 @@
 <h1 align="center">Hi everyone 👋, I'm Híu</h1>
 <h3 align="center">Kho Github này dùng để lưu các dự án, bài tập thực hành Android Studio</h3>
 
-- 1️⃣ Bài tập 1: **Hello World**
+- Bài tập 1: **Hello World**
+  
+- Bài tập 2: **Tính tổng 2 số**
+  
+- Bài tập 3: **Nút bấm cơ bản**
 
-- 4️⃣ Bài tập 4: **Ứng dụng cộng, trừ, nhân, chia**
+- Bài tập 4: **Ứng dụng cộng, trừ, nhân, chia**
 
-- 2️⃣ Bài tập 2: **Tính tổng 2 số**
+- Bài tập 5: **Giao diện Login Material**
 
-- 3️⃣ Bài tập 3: **Nút bấm cơ bản**
+- Bài tập 6: **App tính chỉ số sức khỏe**
 
-- 7️⃣ Bài tập 7: [Coming soon](Coming soon)
+- Bài tập 7: **App Calendar**
 
-- 8️⃣ Bài tập 8: [Coming soon](Coming soon)
+- Bài tập 8: **App giới thiệu thông tin cá nhân**
 
-- 6️⃣ Bài tập 6: **Coming soon**
+- Bài tập 9: **Nhập thông tin**
 
-- 9️⃣ Bài tập 9: [Coming soon](Coming soon)
+- Bài tập 10: **Chuyển đổi màn hình đơn giản với Intent**
 
-- 🔟 Bài tập 10: **Coming soon**
+- Bài tập 11: **Chuyển đổi màn hình Login User Password**
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
+- Bài tập 12: **Coming soon**
 </p>
 
