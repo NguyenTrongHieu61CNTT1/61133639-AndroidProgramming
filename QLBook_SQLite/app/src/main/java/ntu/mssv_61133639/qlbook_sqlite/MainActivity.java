@@ -20,6 +20,19 @@ public class MainActivity extends AppCompatActivity {
         //Thực hiện các lệnh SQL:
         db.execSQL(sqlXoaBangNeuDaCo);
         db.execSQL(sqlTaoBang);
+
+        // Thêm một số dòng dữ liệu vào bảng
+        String sqlThem1 = "INSERT INTO Books VALUES(1, 'Java', 100, 9.99, 'sách về java');";
+        String sqlThem2 = "INSERT INTO Books VALUES(2, 'Android', 320, 19.00, 'Android cơ bản');";
+        String sqlThem3 = "INSERT INTO Books VALUES(3, 'Học làm giàu', 120, 0.99, 'sách đọc cho vui');";
+        String sqlThem4 = "INSERT INTO Books VALUES(4, 'Tử điển Anh-Việt', 1000, 29.50, 'Từ điển 100.000 từ');";
+        String sqlThem5 = "INSERT INTO Books VALUES(5, 'CNXH', 1, 1, 'chuyện cổ tích');";
+        db.execSQL(sqlThem1);
+        db.execSQL(sqlThem2);
+        db.execSQL(sqlThem3);
+        db.execSQL(sqlThem4);
+        db.execSQL(sqlThem5);
+
         //Close to check:
         db.close();
     }
