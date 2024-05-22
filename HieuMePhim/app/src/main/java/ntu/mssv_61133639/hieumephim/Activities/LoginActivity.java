@@ -1,4 +1,4 @@
-package ntu.mssv_61133639.hieumephim;
+package ntu.mssv_61133639.hieumephim.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import ntu.mssv_61133639.hieumephim.R;
 
 public class LoginActivity extends AppCompatActivity {
 

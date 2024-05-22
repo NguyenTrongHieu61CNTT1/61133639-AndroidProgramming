@@ -1,4 +1,4 @@
-package ntu.mssv_61133639.hieumephim;
+package ntu.mssv_61133639.hieumephim.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import ntu.mssv_61133639.hieumephim.R;
 
 public class IntroActivity extends AppCompatActivity {
     @Override
