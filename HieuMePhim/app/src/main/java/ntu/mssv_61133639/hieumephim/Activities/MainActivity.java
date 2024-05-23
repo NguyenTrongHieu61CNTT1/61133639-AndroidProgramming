@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2.setAdapter(new SliderAdapters(sliderItems, viewPager2));
         viewPager2.setClipToPadding(false); //Hiển thị nội dung mà không cắt bớt lề của hình ảnh
+        viewPager2.setClipChildren(false); //Không cắt mất các slide con
         viewPager2.setOffscreenPageLimit(3); //Số lượng trang slide: 3 trang
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_ALWAYS); //Luôn hiển thị hiệu ứng cuộn Slide
 
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
         compositePageTransformer.addTransformer(new MarginPageTransformer(40)); //Thêm hiệu ứng chuyển slide
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         slideHandler.postDelayed(sliderRunable, 2000);
     }
-    
+
     private void initView() {
         viewPager2 = findViewById(R.id.viewPagerSlider);
     }
