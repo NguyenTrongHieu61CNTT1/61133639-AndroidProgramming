@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
@@ -44,12 +45,15 @@ public class SliderAdapters extends RecyclerView.Adapter<SliderAdapters.SliderVi
 
     @Override
     public void onBindViewHolder(@NonNull SliderAdapters.SliderViewHolder holder, int position) {
-
+        holder.setImage(sliderItems.get(position));
+        if(position == sliderItems.size()-2){
+            viewPager2.post(runnable);
+        }
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return sliderItems.size();
     }
 
     public class SliderViewHolder extends RecyclerView.ViewHolder{
@@ -58,10 +62,26 @@ public class SliderAdapters extends RecyclerView.Adapter<SliderAdapters.SliderVi
         //Contructor:
         public SliderViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.imageSlide)
+            imageView = itemView.findViewById(R.id.imageSlide);
         }
         void setImage(SliderItems sliderItems){ //Sử dụng thư viện bumptech/glide
             //Code sử dụng thư viện glide
+            RequestOptions requestOptions = new RequestOptions();
+            requestOptions = requestOptions.transform(new CenterCrop(), new RoundedCorners(60));
+
+            Glide.with(context)
+                    .load(sliderItems.getImage())
+                    .apply(requestOptions)
+                    .into(imageView);
         }
     }
+
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            sliderItems.addAll(sliderItems);
+            notifyDataSetChanged(); //Thay đổi giao diện
+        }
+    };
 }
