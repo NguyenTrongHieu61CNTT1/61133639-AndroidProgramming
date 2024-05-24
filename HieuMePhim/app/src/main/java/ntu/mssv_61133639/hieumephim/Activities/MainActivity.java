@@ -10,19 +10,24 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ntu.mssv_61133639.hieumephim.Adapters.DSPhimAdapter;
 import ntu.mssv_61133639.hieumephim.Adapters.SliderAdapters;
+import ntu.mssv_61133639.hieumephim.Domain.ListPhim;
 import ntu.mssv_61133639.hieumephim.Domain.SliderItems;
 import ntu.mssv_61133639.hieumephim.R;
 
@@ -43,6 +48,29 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         banners();
+        sendRequest();
+    }
+
+    private void sendRequest() {
+        mRequestQueue = Volley.newRequestQueue(this);
+        loading1.setVisibility(View.VISIBLE);
+        mStringRequest1 = new StringRequest(Request.Method.GET, "https://moviesapi.ir/api/v1/movies?page=1", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Gson gson = new Gson();
+                loading1.setVisibility(View.GONE);
+                ListPhim items = gson.fromJson(response, ListPhim.class);
+                adapterPhimHay = new DSPhimAdapter(items);
+                rcvPhimHay.setAdapter(adapterPhimHay);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                loading1.setVisibility(View.GONE);
+                Log.i("HieuMePhim", "onErrorResponse: " + error.toString());
+            }
+        });
+        mRequestQueue.add(mStringRequest1);
     }
 
     private void banners() {
