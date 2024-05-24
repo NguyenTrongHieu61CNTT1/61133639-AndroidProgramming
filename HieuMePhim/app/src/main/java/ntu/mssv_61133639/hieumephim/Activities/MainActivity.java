@@ -2,6 +2,7 @@ package ntu.mssv_61133639.hieumephim.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -10,6 +11,13 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ProgressBar;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +27,11 @@ import ntu.mssv_61133639.hieumephim.Domain.SliderItems;
 import ntu.mssv_61133639.hieumephim.R;
 
 public class MainActivity extends AppCompatActivity {
-
+    private RecyclerView.Adapter adapterPhimHay, adapterPhimMoi, adapterTheLoai;
+    private RecyclerView rcvPhimHay, rcvPhimMoi, rcvTheLoai;
+    private RequestQueue mRequestQueue;
+    private StringRequest mStringRequest1, mStringRequest2, mStringRequest3;
+    private ProgressBar loading1, loading2, loading3;
     private ViewPager2 viewPager2;
     private Handler slideHandler = new Handler();
 
@@ -87,5 +99,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         viewPager2 = findViewById(R.id.viewPagerSlider);
+        rcvPhimHay = findViewById(R.id.view1);
+        rcvPhimHay.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rcvPhimMoi = findViewById(R.id.view2);
+        rcvPhimHay.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        rcvTheLoai = findViewById(R.id.view3);
+        rcvTheLoai.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        loading1 = findViewById(R.id.progressBar1);
+        loading2 = findViewById(R.id.progressBar2);
+        loading3 = findViewById(R.id.progressBar3);
     }
 }
