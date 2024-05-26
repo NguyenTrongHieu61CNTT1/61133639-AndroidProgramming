@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="vang">#F7CD2E</color>
+    <color name="xam">#242B2E</color>
 </resources>
