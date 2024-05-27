@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import ntu.mssv_61133639.dictionaryapp.R;
 
 public class MeaningViewHolder extends RecyclerView.ViewHolder {
-    TextView textView_partOfSpeech;
-    RecyclerView recycler_definitions;
+    public TextView textView_partOfSpeech;
+    public RecyclerView recycler_definitions;
     public MeaningViewHolder(@NonNull View itemView) {
         super(itemView);
         textView_partOfSpeech = itemView.findViewById(R.id.textView_partOfSpeech);

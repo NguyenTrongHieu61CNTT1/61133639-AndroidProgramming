@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
 import java.util.List;
 
 import ntu.mssv_61133639.dictionaryapp.Models.Phonetics;
@@ -20,6 +21,11 @@ import ntu.mssv_61133639.dictionaryapp.ViewHolders.PhoneticViewHolder;
 public class PhoneticsAdapter extends RecyclerView.Adapter<PhoneticViewHolder> {
     private Context context;
     private List<Phonetics> phoneticsList;
+
+    public PhoneticsAdapter(Context context, List<Phonetics> phoneticsList) {
+        this.context = context;
+        this.phoneticsList = phoneticsList;
+    }
 
     @NonNull
     @Override
@@ -37,10 +43,10 @@ public class PhoneticsAdapter extends RecyclerView.Adapter<PhoneticViewHolder> {
                 MediaPlayer player = new MediaPlayer();
                 try{
                     player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                    player.setDataSource("https:" + phoneticsList.get(position).getAudio());
+                    player.setDataSource("https:" + phoneticsList.get(holder.getAdapterPosition()).getAudio()); //Position
                     player.prepare();
                     player.start();
-                }catch (Exception e){
+                }catch (IOException e){
                     e.printStackTrace();
                     Toast.makeText(context, "Không thể đọc phát âm!", Toast.LENGTH_SHORT).show();
                 }
