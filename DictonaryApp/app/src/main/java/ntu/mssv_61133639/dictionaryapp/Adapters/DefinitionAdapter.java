@@ -27,13 +27,12 @@ public class DefinitionAdapter extends RecyclerView.Adapter<DefinitionViewHolder
     @Override
     public DefinitionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new DefinitionViewHolder(LayoutInflater.from(context).inflate(R.layout.definitions_list_items, parent, false));
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull DefinitionViewHolder holder, int position) {
-        holder.textView_definition.setText("Định nghĩa: " + definitionsList.get(position).getDefinition());
-        holder.textView_definition.setText("Ví dụ: " + definitionsList.get(position).getExample());
+        holder.textView_definitions.setText("Định nghĩa: " + definitionsList.get(position).getDefinition());
+        holder.textView_example.setText("Ví dụ: " + definitionsList.get(position).getExample());
         StringBuilder synonyms = new StringBuilder();
         StringBuilder antonyms = new StringBuilder();
 

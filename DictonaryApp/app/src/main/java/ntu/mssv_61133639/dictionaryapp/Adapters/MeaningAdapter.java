@@ -16,7 +16,7 @@ import ntu.mssv_61133639.dictionaryapp.ViewHolders.MeaningViewHolder;
 
 public class MeaningAdapter extends RecyclerView.Adapter<MeaningViewHolder> {
     private Context context;
-    protected List<Meanings> meaningsList;
+    private List<Meanings> meaningsList;
 
     public MeaningAdapter(Context context, List<Meanings> meaningsList) {
         this.context = context;
@@ -27,17 +27,18 @@ public class MeaningAdapter extends RecyclerView.Adapter<MeaningViewHolder> {
     @Override
     public MeaningViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MeaningViewHolder(LayoutInflater.from(context).inflate(R.layout.meanings_list_items, parent, false));
-
     }
 
     @Override
     public void onBindViewHolder(@NonNull MeaningViewHolder holder, int position) {
-        holder.textView_partOfSpeech.setText("Loại từ: " + meaningsList.get(position).getPartOfSpeech());
+        holder.textView_partsOfSpeech.setText("Phân loại từ: " + meaningsList.get(position).getPartOfSpeech());
+
         holder.recycler_definitions.setHasFixedSize(true);
         holder.recycler_definitions.setLayoutManager(new GridLayoutManager(context, 1));
         DefinitionAdapter definitionAdapter = new DefinitionAdapter(context, meaningsList.get(position).getDefinitions());
         holder.recycler_definitions.setAdapter(definitionAdapter);
     }
+
 
     @Override
     public int getItemCount() {

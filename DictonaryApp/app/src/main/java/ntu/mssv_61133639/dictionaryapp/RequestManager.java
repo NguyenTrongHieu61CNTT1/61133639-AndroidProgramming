@@ -1,6 +1,7 @@
 package ntu.mssv_61133639.dictionaryapp;
 
 import android.content.Context;
+import android.telecom.CallAudioState;
 import android.widget.Toast;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import retrofit2.http.Path;
 
 public class RequestManager {
     Context context;
+
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://api.dictionaryapi.dev/api/v2/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -35,21 +37,23 @@ public class RequestManager {
                 @Override
                 public void onResponse(Call<List<APIResponse>> call, Response<List<APIResponse>> response) {
                     if (!response.isSuccessful()){
-                        Toast.makeText(context, "Lỗi!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Error!!", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     listener.onFetchData(response.body().get(0), response.message());
                 }
 
                 @Override
-                public void onFailure(Call<List<APIResponse>> call, Throwable throwable) {
-                    listener.onError("Yêu cầu thất bại!");
+                public void onFailure(Call<List<APIResponse>> call, Throwable t) {
+                    listener.onError("Request Failed!");
                 }
+
             });
-        } catch (Exception e){
+        }catch (Exception e){
             e.printStackTrace();
-            Toast.makeText(context, "Có lỗi xảy ra!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Xảy ra lỗi!", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     public interface CallDictionary {
@@ -59,3 +63,4 @@ public class RequestManager {
         );
     }
 }
+

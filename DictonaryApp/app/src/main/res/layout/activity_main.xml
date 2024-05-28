@@ -5,39 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/xam"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:textAlignment="center"
+            android:background="@color/vang"
+            app:titleTextColor="@color/black"
+            app:subtitleTextColor="@color/xam"
+            app:title="@string/app_name"
+            app:subtitle="Developed by Híu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"/>
+        <androidx.cardview.widget.CardView
             android:layout_margin="16dp"
             app:cardCornerRadius="8dp"
-            android:elevation="8dp"
-            app:cardBackgroundColor="@color/vang">
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
-                app:defaultQueryHint="Tìm kiến..."
-                app:iconifiedByDefault="false"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#F7CD2E"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"/>
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    app:defaultQueryHint="Tìm kiếm..."
+                    app:iconifiedByDefault="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"/>
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_margin="16dp"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
                 android:id="@+id/textView_word"
                 android:textSize="24sp"
-                android:text="Từ"
+                android:text="Hello"
                 android:textColor="@color/vang"
-                android:textAlignment="center"
+                android:background="@color/xam"
                 android:padding="8dp"
+                android:textAlignment="center"
                 android:textStyle="italic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -46,18 +62,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:text="CHI TIẾT"
+                android:textSize="24sp"
                 android:textColor="@color/vang"
                 android:textAlignment="center"
                 android:padding="8dp"
-                android:textSize="24sp"
                 android:textStyle="italic"
-                android:text="Meaning"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_meanings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+
         </LinearLayout>
     </LinearLayout>
 
